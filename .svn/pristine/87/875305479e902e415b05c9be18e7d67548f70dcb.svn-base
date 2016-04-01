@@ -1,0 +1,514 @@
+<html xmlns:string="xalan://java.lang.String" xmlns:lxslt="http://xml.apache.org/xslt">
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unit Test Results: com.example.research.DataDBAccessControlTest</title>
+<link rel="stylesheet" type="text/css" title="Style" href="../../../stylesheet.css">
+<script type="text/javascript" language="JavaScript">
+        var TestCases = new Array();
+        var cur;
+        
+    cur = TestCases['com.example.research.DataDBAccessControlTest'] = new Array();
+    
+        cur['ant.build.javac.source'] = '1.8';
+    
+        cur['ant.build.javac.target'] = '1.8';
+    
+        cur['ant.core.lib'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant.jar';
+    
+        cur['ant.file'] = '/Users/RTracey/Documents/CS/Eclipse/Research/build.xml';
+    
+        cur['ant.file.Build script for Vaadin 7 projects'] = '/Users/RTracey/Documents/CS/Eclipse/Research/build.xml';
+    
+        cur['ant.file.type.Build script for Vaadin 7 projects'] = 'file';
+    
+        cur['ant.home'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020';
+    
+        cur['ant.home.ivy.instance'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020';
+    
+        cur['ant.java.version'] = '1.8';
+    
+        cur['ant.library.dir'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib';
+    
+        cur['ant.library.dir.ivy.instance'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib';
+    
+        cur['ant.project.default-target'] = 'testreport';
+    
+        cur['ant.project.invoked-targets'] = 'testreport';
+    
+        cur['ant.project.name'] = 'Build script for Vaadin 7 projects';
+    
+        cur['ant.version'] = 'Apache Ant(TM) version 1.9.4 compiled on April 29 2014';
+    
+        cur['artifacts'] = 'build';
+    
+        cur['awt.toolkit'] = 'sun.lwawt.macosx.LWCToolkit';
+    
+        cur['awt.toolkit.ivy.instance'] = 'sun.lwawt.macosx.LWCToolkit';
+    
+        cur['basedir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['basedir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['compile.debug'] = 'on';
+    
+        cur['compiled-classes.dir'] = 'build/work/WEB-INF/classes';
+    
+        cur['compiled-tests.dir'] = 'build/work/tests/classes';
+    
+        cur['eclipse.pdebuild.home'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/.//';
+    
+        cur['eclipse.pdebuild.scripts'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/scripts//';
+    
+        cur['eclipse.pdebuild.templates'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/templates//';
+    
+        cur['failifnotserializable'] = 'true';
+    
+        cur['file.encoding'] = 'UTF-8';
+    
+        cur['file.encoding.ivy.instance'] = 'UTF-8';
+    
+        cur['file.encoding.pkg'] = 'sun.io';
+    
+        cur['file.encoding.pkg.ivy.instance'] = 'sun.io';
+    
+        cur['file.separator'] = '/';
+    
+        cur['file.separator.ivy.instance'] = '/';
+    
+        cur['ftp.nonProxyHosts'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['ftp.nonProxyHosts.ivy.instance'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['gopherProxySet'] = 'false';
+    
+        cur['gopherProxySet.ivy.instance'] = 'false';
+    
+        cur['http.nonProxyHosts'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['http.nonProxyHosts.ivy.instance'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['ivy.basedir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.basedir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.build.artifacts.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research/build/artifacts';
+    
+        cur['ivy.build.artifacts.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/build/artifacts';
+    
+        cur['ivy.buildlist.ivyfilepath'] = 'ivy.xml';
+    
+        cur['ivy.buildlist.ivyfilepath.ivy.instance'] = 'ivy.xml';
+    
+        cur['ivy.cache.dir'] = '/Users/RTracey/.ivy2/cache';
+    
+        cur['ivy.cache.dir.ivy.instance'] = '/Users/RTracey/.ivy2/cache';
+    
+        cur['ivy.cache.ttl.default'] = '10s';
+    
+        cur['ivy.cache.ttl.default.ivy.instance'] = '10s';
+    
+        cur['ivy.checksums'] = 'sha1,md5';
+    
+        cur['ivy.checksums.ivy.instance'] = 'sha1,md5';
+    
+        cur['ivy.conf.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.conf.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.conf.file'] = '/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.conf.file.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.conf.url'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.conf.url.ivy.instance'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.configurations'] = '*';
+    
+        cur['ivy.configurations.ivy.instance'] = '*';
+    
+        cur['ivy.default.always.check.exact.revision'] = 'false';
+    
+        cur['ivy.default.always.check.exact.revision.ivy.instance'] = 'false';
+    
+        cur['ivy.default.conf.dir'] = 'jar:file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ivy.eclipse.ant_2.4.0.final_20141213170938/ivy.jar!/org/apache/ivy/core/settings';
+    
+        cur['ivy.default.conf.dir.ivy.instance'] = 'jar:file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ivy.eclipse.ant_2.4.0.final_20141213170938/ivy.jar!/org/apache/ivy/core/settings';
+    
+        cur['ivy.default.ivy.user.dir'] = '/Users/RTracey/.ivy2';
+    
+        cur['ivy.default.ivy.user.dir.ivy.instance'] = '/Users/RTracey/.ivy2';
+    
+        cur['ivy.default.settings.dir'] = 'jar:file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ivy.eclipse.ant_2.4.0.final_20141213170938/ivy.jar!/org/apache/ivy/core/settings';
+    
+        cur['ivy.default.settings.dir.ivy.instance'] = 'jar:file:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ivy.eclipse.ant_2.4.0.final_20141213170938/ivy.jar!/org/apache/ivy/core/settings';
+    
+        cur['ivy.deliver.ivy.pattern'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.deliver.ivy.pattern.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.dep.file'] = 'ivy.xml';
+    
+        cur['ivy.dep.file.ivy.instance'] = 'ivy.xml';
+    
+        cur['ivy.deps.changed'] = 'false';
+    
+        cur['ivy.distrib.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib';
+    
+        cur['ivy.distrib.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib';
+    
+        cur['ivy.home'] = '/Users/RTracey/.ivy2';
+    
+        cur['ivy.home.ivy.instance'] = '/Users/RTracey/.ivy2';
+    
+        cur['ivy.install.version'] = '2.4.0';
+    
+        cur['ivy.jar.dir'] = '/Users/RTracey/.ant/lib';
+    
+        cur['ivy.jar.file'] = '/Users/RTracey/.ant/lib/ivy.jar';
+    
+        cur['ivy.lib.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research/lib';
+    
+        cur['ivy.lib.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/lib';
+    
+        cur['ivy.log.modules.in.use'] = 'false';
+    
+        cur['ivy.log.modules.in.use.ivy.instance'] = 'false';
+    
+        cur['ivy.module'] = 'v7proj';
+    
+        cur['ivy.organisation'] = 'com.example';
+    
+        cur['ivy.parents.count'] = '0';
+    
+        cur['ivy.project.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.project.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.publish.src.artifacts.pattern'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.publish.src.artifacts.pattern.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/distrib/[type]s/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.report.output.pattern'] = '[organisation]-[module]-[conf].[ext]';
+    
+        cur['ivy.report.output.pattern.ivy.instance'] = '[organisation]-[module]-[conf].[ext]';
+    
+        cur['ivy.resolve.default.type.filter'] = '*';
+    
+        cur['ivy.resolve.default.type.filter.ivy.instance'] = '*';
+    
+        cur['ivy.resolved.configurations'] = 'widgetset-compile';
+    
+        cur['ivy.resolved.file'] = '/Users/RTracey/Documents/CS/Eclipse/Research/ivy.xml';
+    
+        cur['ivy.resolver.default.check.modified'] = 'false';
+    
+        cur['ivy.resolver.default.check.modified.ivy.instance'] = 'false';
+    
+        cur['ivy.retrieve.pattern'] = '/Users/RTracey/Documents/CS/Eclipse/Research/lib/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.retrieve.pattern.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/lib/[artifact]-[revision](-[classifier]).[ext]';
+    
+        cur['ivy.revision'] = 'working@TBE9A.WPA.Dal.Ca';
+    
+        cur['ivy.settings.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.settings.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['ivy.settings.dir.url'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/';
+    
+        cur['ivy.settings.dir.url.ivy.instance'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/';
+    
+        cur['ivy.settings.file'] = 'ivysettings.xml';
+    
+        cur['ivy.settings.file.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.settings.url'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.settings.url.ivy.instance'] = 'file:/Users/RTracey/Documents/CS/Eclipse/Research/ivysettings.xml';
+    
+        cur['ivy.status'] = 'integration';
+    
+        cur['ivy.status.ivy.instance'] = 'integration';
+    
+        cur['ivy.version'] = '2.4.0';
+    
+        cur['java.awt.graphicsenv'] = 'sun.awt.CGraphicsEnvironment';
+    
+        cur['java.awt.graphicsenv.ivy.instance'] = 'sun.awt.CGraphicsEnvironment';
+    
+        cur['java.awt.printerjob'] = 'sun.lwawt.macosx.CPrinterJob';
+    
+        cur['java.awt.printerjob.ivy.instance'] = 'sun.lwawt.macosx.CPrinterJob';
+    
+        cur['java.class.path'] = '/Users/RTracey/.ivy2/cache/antlr/antlr/jars/antlr-2.7.7.jar:/Users/RTracey/.ivy2/cache/asm/asm-commons/jars/asm-commons-3.1.jar:/Users/RTracey/.ivy2/cache/asm/asm-tree/jars/asm-tree-3.1.jar:/Users/RTracey/.ivy2/cache/asm/asm/jars/asm-3.1.jar:/Users/RTracey/.ivy2/cache/com.fasterxml/classmate/bundles/classmate-1.3.0.jar:/Users/RTracey/.ivy2/cache/com.h2database/h2/jars/h2-1.4.191.jar:/Users/RTracey/.ivy2/cache/com.vaadin.addon/jpacontainer/jars/jpacontainer-3.2.0.jar:/Users/RTracey/.ivy2/cache/com.vaadin.addon/vaadin-touchkit-agpl/jars/vaadin-touchkit-agpl-4.1.0.jar:/Users/RTracey/.ivy2/cache/com.vaadin.external.atmosphere/atmosphere-runtime/bundles/atmosphere-runtime-2.2.7.vaadin1.jar:/Users/RTracey/.ivy2/cache/com.vaadin.external.flute/flute/jars/flute-1.3.0.gg2.jar:/Users/RTracey/.ivy2/cache/com.vaadin.external.google/guava/jars/guava-16.0.1.vaadin1.jar:/Users/RTracey/.ivy2/cache/com.vaadin.external.slf4j/vaadin-slf4j-jdk14/jars/vaadin-slf4j-jdk14-1.6.1.jar:/Users/RTracey/.ivy2/cache/com.vaadin.external.streamhtmlparser/streamhtmlparser-jsilver/jars/streamhtmlparser-jsilver-0.0.10.vaadin1.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-client-compiled/jars/vaadin-client-compiled-7.6.2.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-push/jars/vaadin-push-7.6.2.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-sass-compiler/jars/vaadin-sass-compiler-0.9.13.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-server/jars/vaadin-server-7.6.2.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-shared/jars/vaadin-shared-7.6.2.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-themes/jars/vaadin-themes-7.7-SNAPSHOT.jar:/Users/RTracey/.ivy2/cache/com.yahoo.platform.yui/yuicompressor/jars/yuicompressor-2.4.8.jar:/Users/RTracey/.ivy2/cache/dom4j/dom4j/jars/dom4j-1.6.1.jar:/Users/RTracey/.ivy2/cache/javax.activation/activation/jars/activation-1.1.jar:/Users/RTracey/.ivy2/cache/javax.mail/mail/jars/mail-1.4.jar:/Users/RTracey/.ivy2/cache/javax.validation/validation-api/jars/validation-api-1.1.0.Final.jar:/Users/RTracey/.ivy2/cache/junit/junit-dep/jars/junit-dep-4.8.2.jar:/Users/RTracey/.ivy2/cache/org.apache.geronimo.specs/geronimo-annotation_1.0_spec/jars/geronimo-annotation_1.0_spec-1.1.1.jar:/Users/RTracey/.ivy2/cache/org.apache.geronimo.specs/geronimo-jaspic_1.0_spec/bundles/geronimo-jaspic_1.0_spec-1.0.jar:/Users/RTracey/.ivy2/cache/org.apache.geronimo.specs/geronimo-jta_1.1_spec/jars/geronimo-jta_1.1_spec-1.1.1.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty.aggregate/jetty-all-server/jars/jetty-all-server-8.0.0.M0.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/javax.persistence/jars/javax.persistence-2.1.1.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.antlr/jars/org.eclipse.persistence.antlr-2.6.2.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.asm/jars/org.eclipse.persistence.asm-2.6.2.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.core/jars/org.eclipse.persistence.core-2.6.2.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa.jpql/jars/org.eclipse.persistence.jpa.jpql-2.6.2.jar:/Users/RTracey/.ivy2/cache/org.eclipse.persistence/org.eclipse.persistence.jpa/jars/org.eclipse.persistence.jpa-2.6.2.jar:/Users/RTracey/.ivy2/cache/org.glassfish/javax.json/bundles/javax.json-1.0.4.jar:/Users/RTracey/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.1.jar:/Users/RTracey/.ivy2/cache/org.hibernate.common/hibernate-commons-annotations/jars/hibernate-commons-annotations-5.0.1.Final.jar:/Users/RTracey/.ivy2/cache/org.hibernate.javax.persistence/hibernate-jpa-2.1-api/jars/hibernate-jpa-2.1-api-1.0.0.Final.jar:/Users/RTracey/.ivy2/cache/org.hibernate/hibernate-core/jars/hibernate-core-5.1.0.Final.jar:/Users/RTracey/.ivy2/cache/org.hibernate/hibernate-entitymanager/jars/hibernate-entitymanager-5.1.0.Final.jar:/Users/RTracey/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.20.0-GA.jar:/Users/RTracey/.ivy2/cache/org.jboss.logging/jboss-logging/jars/jboss-logging-3.3.0.Final.jar:/Users/RTracey/.ivy2/cache/org.jboss/jandex/bundles/jandex-2.0.0.Final.jar:/Users/RTracey/.ivy2/cache/org.jsoup/jsoup/jars/jsoup-1.8.3.jar:/Users/RTracey/.ivy2/cache/org.mortbay.jetty/servlet-api/jars/servlet-api-3.0.20100224.jar:/Users/RTracey/.ivy2/cache/org.vaadin.addons/loginform/jars/loginform-0.6.2.jar:/Users/RTracey/.ivy2/cache/org.w3c.css/sac/jars/sac-1.3.jar:/Users/RTracey/.ivy2/cache/rhino/js/jars/js-1.7R2.jar:/Users/RTracey/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.0.b2.jar:/Users/RTracey/.ivy2/cache/cglib/cglib-nodep/jars/cglib-nodep-2.2.2.jar:/Users/RTracey/.ivy2/cache/com.codeborne/phantomjsdriver/jars/phantomjsdriver-1.2.1.jar:/Users/RTracey/.ivy2/cache/com.google.code.gson/gson/jars/gson-2.3.1.jar:/Users/RTracey/.ivy2/cache/com.google.guava/guava/bundles/guava-18.0.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-testbench-api/jars/vaadin-testbench-api-7.6.3.jar:/Users/RTracey/.ivy2/cache/com.vaadin/vaadin-testbench-core/jars/vaadin-testbench-core-4.1.0.alpha1.jar:/Users/RTracey/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.10.jar:/Users/RTracey/.ivy2/cache/commons-collections/commons-collections/jars/commons-collections-3.2.1.jar:/Users/RTracey/.ivy2/cache/commons-io/commons-io/jars/commons-io-2.4.jar:/Users/RTracey/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.2.jar:/Users/RTracey/.ivy2/cache/io.netty/netty/bundles/netty-3.5.2.Final.jar:/Users/RTracey/.ivy2/cache/javax.servlet/javax.servlet-api/jars/javax.servlet-api-3.0.1.jar:/Users/RTracey/.ivy2/cache/junit/junit/jars/junit-4.11.jar:/Users/RTracey/.ivy2/cache/mx4j/mx4j-tools/jars/mx4j-tools-3.0.1.jar:/Users/RTracey/.ivy2/cache/net.java.dev.jna/jna-platform/jars/jna-platform-4.1.0.jar:/Users/RTracey/.ivy2/cache/net.java.dev.jna/jna/jars/jna-4.1.0.jar:/Users/RTracey/.ivy2/cache/net.jcip/jcip-annotations/jars/jcip-annotations-1.0.jar:/Users/RTracey/.ivy2/cache/net.sourceforge.cssparser/cssparser/jars/cssparser-0.9.16.jar:/Users/RTracey/.ivy2/cache/net.sourceforge.htmlunit/htmlunit-core-js/jars/htmlunit-core-js-2.17.jar:/Users/RTracey/.ivy2/cache/net.sourceforge.htmlunit/htmlunit/jars/htmlunit-2.17.jar:/Users/RTracey/.ivy2/cache/net.sourceforge.nekohtml/nekohtml/jars/nekohtml-1.9.22.jar:/Users/RTracey/.ivy2/cache/org.apache.commons/commons-exec/jars/commons-exec-1.3.jar:/Users/RTracey/.ivy2/cache/org.apache.commons/commons-lang3/jars/commons-lang3-3.4.jar:/Users/RTracey/.ivy2/cache/org.apache.httpcomponents/httpclient/jars/httpclient-4.4.1.jar:/Users/RTracey/.ivy2/cache/org.apache.httpcomponents/httpcore/jars/httpcore-4.4.1.jar:/Users/RTracey/.ivy2/cache/org.apache.httpcomponents/httpmime/jars/httpmime-4.4.1.jar:/Users/RTracey/.ivy2/cache/org.bouncycastle/bcpkix-jdk15on/jars/bcpkix-jdk15on-1.48.jar:/Users/RTracey/.ivy2/cache/org.bouncycastle/bcprov-jdk15on/jars/bcprov-jdk15on-1.48.jar:/Users/RTracey/.ivy2/cache/org.easymock/easymock/jars/easymock-3.1.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty.websocket/websocket-api/jars/websocket-api-9.2.11.v20150529.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty.websocket/websocket-client/jars/websocket-client-9.2.11.v20150529.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty.websocket/websocket-common/jars/websocket-common-9.2.11.v20150529.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty/jetty-io/jars/jetty-io-9.2.11.v20150529.jar:/Users/RTracey/.ivy2/cache/org.eclipse.jetty/jetty-util/jars/jetty-util-9.2.11.v20150529.jar:/Users/RTracey/.ivy2/cache/org.hamcrest/hamcrest-core/jars/hamcrest-core-1.3.jar:/Users/RTracey/.ivy2/cache/org.javassist/javassist/bundles/javassist-3.18.1-GA.jar:/Users/RTracey/.ivy2/cache/org.mortbay.jetty/servlet-api-2.5/jars/servlet-api-2.5-6.1.9.jar:/Users/RTracey/.ivy2/cache/org.objenesis/objenesis/jars/objenesis-1.2.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/jetty-rc-repacked/jars/jetty-rc-repacked-5.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/jetty-repacked/jars/jetty-repacked-7.6.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-api/jars/selenium-api-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-chrome-driver/jars/selenium-chrome-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-edge-driver/jars/selenium-edge-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-firefox-driver/jars/selenium-firefox-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-htmlunit-driver/jars/selenium-htmlunit-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-ie-driver/jars/selenium-ie-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-java/jars/selenium-java-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-leg-rc/jars/selenium-leg-rc-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-remote-driver/jars/selenium-remote-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-safari-driver/jars/selenium-safari-driver-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-server/jars/selenium-server-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.seleniumhq.selenium/selenium-support/jars/selenium-support-2.47.1.jar:/Users/RTracey/.ivy2/cache/org.webbitserver/webbit/jars/webbit-0.4.14.jar:/Users/RTracey/.ivy2/cache/org.yaml/snakeyaml/jars/snakeyaml-1.8.jar:/Users/RTracey/.ivy2/cache/xalan/serializer/jars/serializer-2.7.2.jar:/Users/RTracey/.ivy2/cache/xalan/xalan/jars/xalan-2.7.2.jar:/Users/RTracey/.ivy2/cache/xerces/xercesImpl/jars/xercesImpl-2.11.0.jar:/Users/RTracey/.ivy2/cache/xml-apis/xml-apis/jars/xml-apis-1.4.01.jar:/Users/RTracey/Documents/CS/Eclipse/Research/build/work/WEB-INF/classes:/Users/RTracey/Documents/CS/Eclipse/Research/build/work/tests/classes:/Users/RTracey/Documents/CS/Eclipse/Research/src:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-launcher.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit4.jar';
+    
+        cur['java.class.path.ivy.instance'] = '/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-antlr.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-bcel.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-bsf.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-log4j.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-oro.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-regexp.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-resolver.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-apache-xalan2.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-commons-logging.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-commons-net.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-jai.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-javamail.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-jdepend.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-jmf.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-jsch.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-junit4.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-launcher.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-netrexx.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-swing.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant-testutil.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020/lib/ant.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ivy.eclipse.ant_2.4.0.final_20141213170938/ivy.jar:/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/961/0/.cp/lib/antdebug.jar:/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/961/0/.cp/lib/remote.jar:/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/962/0/.cp/lib/remoteAnt.jar:/Users/RTracey/.ant/lib/ivy.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/lib/tools.jar:/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.104.1.v20150825-0743.jar';
+    
+        cur['java.class.version'] = '52.0';
+    
+        cur['java.class.version.ivy.instance'] = '52.0';
+    
+        cur['java.endorsed.dirs'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/endorsed';
+    
+        cur['java.endorsed.dirs.ivy.instance'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/endorsed';
+    
+        cur['java.ext.dirs'] = '/Users/RTracey/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java';
+    
+        cur['java.ext.dirs.ivy.instance'] = '/Users/RTracey/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java';
+    
+        cur['java.home'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre';
+    
+        cur['java.home.ivy.instance'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre';
+    
+        cur['java.io.tmpdir'] = '/var/folders/ys/m44vhlmx0p32b090bmpv4tm00000gn/T/';
+    
+        cur['java.io.tmpdir.ivy.instance'] = '/var/folders/ys/m44vhlmx0p32b090bmpv4tm00000gn/T/';
+    
+        cur['java.library.path'] = '/Users/RTracey/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.';
+    
+        cur['java.library.path.ivy.instance'] = '/Users/RTracey/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.:/Applications/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/749/0/.cp';
+    
+        cur['java.runtime.name'] = 'Java(TM) SE Runtime Environment';
+    
+        cur['java.runtime.name.ivy.instance'] = 'Java(TM) SE Runtime Environment';
+    
+        cur['java.runtime.version'] = '1.8.0_60-b27';
+    
+        cur['java.runtime.version.ivy.instance'] = '1.8.0_60-b27';
+    
+        cur['java.specification.name'] = 'Java Platform API Specification';
+    
+        cur['java.specification.name.ivy.instance'] = 'Java Platform API Specification';
+    
+        cur['java.specification.vendor'] = 'Oracle Corporation';
+    
+        cur['java.specification.vendor.ivy.instance'] = 'Oracle Corporation';
+    
+        cur['java.specification.version'] = '1.8';
+    
+        cur['java.specification.version.ivy.instance'] = '1.8';
+    
+        cur['java.vendor'] = 'Oracle Corporation';
+    
+        cur['java.vendor.ivy.instance'] = 'Oracle Corporation';
+    
+        cur['java.vendor.url'] = 'http://java.oracle.com/';
+    
+        cur['java.vendor.url.bug'] = 'http://bugreport.sun.com/bugreport/';
+    
+        cur['java.vendor.url.bug.ivy.instance'] = 'http://bugreport.sun.com/bugreport/';
+    
+        cur['java.vendor.url.ivy.instance'] = 'http://java.oracle.com/';
+    
+        cur['java.version'] = '1.8.0_60';
+    
+        cur['java.version.ivy.instance'] = '1.8.0_60';
+    
+        cur['java.vm.info'] = 'mixed mode';
+    
+        cur['java.vm.info.ivy.instance'] = 'mixed mode';
+    
+        cur['java.vm.name'] = 'Java HotSpot(TM) 64-Bit Server VM';
+    
+        cur['java.vm.name.ivy.instance'] = 'Java HotSpot(TM) 64-Bit Server VM';
+    
+        cur['java.vm.specification.name'] = 'Java Virtual Machine Specification';
+    
+        cur['java.vm.specification.name.ivy.instance'] = 'Java Virtual Machine Specification';
+    
+        cur['java.vm.specification.vendor'] = 'Oracle Corporation';
+    
+        cur['java.vm.specification.vendor.ivy.instance'] = 'Oracle Corporation';
+    
+        cur['java.vm.specification.version'] = '1.8';
+    
+        cur['java.vm.specification.version.ivy.instance'] = '1.8';
+    
+        cur['java.vm.vendor'] = 'Oracle Corporation';
+    
+        cur['java.vm.vendor.ivy.instance'] = 'Oracle Corporation';
+    
+        cur['java.vm.version'] = '25.60-b23';
+    
+        cur['java.vm.version.ivy.instance'] = '25.60-b23';
+    
+        cur['junit.output.dir'] = 'junit';
+    
+        cur['libraries'] = 'lib';
+    
+        cur['line.separator'] = '\n';
+    
+        cur['line.separator.ivy.instance'] = '\n';
+    
+        cur['os.arch'] = 'x86_64';
+    
+        cur['os.arch.ivy.instance'] = 'x86_64';
+    
+        cur['os.name'] = 'Mac OS X';
+    
+        cur['os.name.ivy.instance'] = 'Mac OS X';
+    
+        cur['os.version'] = '10.11.3';
+    
+        cur['os.version.ivy.instance'] = '10.11.3';
+    
+        cur['path.separator'] = ':';
+    
+        cur['path.separator.ivy.instance'] = ':';
+    
+        cur['socksNonProxyHosts'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['socksNonProxyHosts.ivy.instance'] = 'local|*.local|169.254/16|*.169.254/16';
+    
+        cur['sources'] = 'src';
+    
+        cur['sun.arch.data.model'] = '64';
+    
+        cur['sun.arch.data.model.ivy.instance'] = '64';
+    
+        cur['sun.boot.class.path'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes';
+    
+        cur['sun.boot.class.path.ivy.instance'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/classes';
+    
+        cur['sun.boot.library.path'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib';
+    
+        cur['sun.boot.library.path.ivy.instance'] = '/Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/jre/lib';
+    
+        cur['sun.cpu.endian'] = 'little';
+    
+        cur['sun.cpu.endian.ivy.instance'] = 'little';
+    
+        cur['sun.cpu.isalist'] = '';
+    
+        cur['sun.cpu.isalist.ivy.instance'] = '';
+    
+        cur['sun.io.unicode.encoding'] = 'UnicodeBig';
+    
+        cur['sun.io.unicode.encoding.ivy.instance'] = 'UnicodeBig';
+    
+        cur['sun.java.command'] = 'org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner testsfile=/Users/RTracey/Documents/CS/Eclipse/Research/junittestcases6856949104496876821.properties skipNonTests=false filtertrace=true haltOnError=true haltOnFailure=true formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/RTracey/Documents/CS/Eclipse/Research/junit/IGNORETHIS.xml crashfile=/Users/RTracey/Documents/CS/Eclipse/Research/junitvmwatcher1333618204554837404.properties propsfile=/Users/RTracey/Documents/CS/Eclipse/Research/junit6560610266318578665.properties';
+    
+        cur['sun.java.command.ivy.instance'] = 'org.eclipse.ant.internal.launching.remote.InternalAntRunner -Dorg.eclipse.ant.core.ANT_PROCESS_ID=1457294585580 -Declipse.connect.port=56297 -Declipse.pdebuild.home=/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/.// -Declipse.pdebuild.scripts=/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/scripts// -Declipse.pdebuild.templates=/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.pde.build_3.9.100.v20150521-1524/templates// -Dant.home=/Applications/Eclipse.app/Contents/Eclipse/plugins/org.apache.ant_1.9.4.v201504302020 -logger org.eclipse.ant.internal.launching.remote.logger.RemoteAntBuildLogger -inputhandler org.eclipse.ant.internal.ui.antsupport.inputhandler.ProxyInputHandler -eclipseTask antlib:org.apache.ivy.ant:configure,org.apache.ivy.ant.IvyConfigure -eclipseTask antlib:org.apache.ivy.ant:resolve,org.apache.ivy.ant.IvyResolve -eclipseTask antlib:org.apache.ivy.ant:retrieve,org.apache.ivy.ant.IvyRetrieve -eclipseTask antlib:org.apache.ivy.ant:deliver,org.apache.ivy.ant.IvyDeliver -eclipseTask antlib:org.apache.ivy.ant:publish,org.apache.ivy.ant.IvyPublish -eclipseTask antlib:org.apache.ivy.ant:extract,org.apache.ivy.ant.IvyExtractFromSources -eclipseTask antlib:org.apache.ivy.ant:cachepath,org.apache.ivy.ant.IvyCachePath -eclipseTask antlib:org.apache.ivy.ant:cachefileset,org.apache.ivy.ant.IvyCacheFileset -eclipseTask antlib:org.apache.ivy.ant:report,org.apache.ivy.ant.IvyReport -eclipseTask antlib:org.apache.ivy.ant:repreport,org.apache.ivy.ant.IvyRepositoryReport -eclipseTask antlib:org.apache.ivy.ant:var,org.apache.ivy.ant.IvyVar -eclipseTask antlib:org.apache.ivy.ant:check,org.apache.ivy.ant.IvyCheck -eclipseTask antlib:org.apache.ivy.ant:artifactproperty,org.apache.ivy.ant.IvyArtifactProperty -eclipseTask antlib:org.apache.ivy.ant:buildlist,org.apache.ivy.ant.IvyBuildList -eclipseTask antlib:org.apache.ivy.ant:install,org.apache.ivy.ant.IvyInstall -eclipseTask antlib:org.apache.ivy.ant:convertpom,org.apache.ivy.ant.IvyConvertPom -eclipseTask antlib:org.apache.ivy.ant:makepom,org.apache.ivy.ant.IvyMakePom -eclipseTask antlib:org.apache.ivy.ant:artifactreport,org.apache.ivy.ant.IvyArtifactReport -eclipseTask antlib:org.apache.ivy.ant:info,org.apache.ivy.ant.IvyInfo -eclipseTask antlib:org.apache.ivy.ant:addpath,org.apache.ivy.ant.AddPathTask -eclipseTask antlib:org.apache.ivy.ant:listmodules,org.apache.ivy.ant.IvyListModules -eclipseTask antlib:org.apache.ivy.ant:findrevision,org.apache.ivy.ant.IvyFindRevision -eclipseTask antlib:org.apache.ivy.ant:buildnumber,org.apache.ivy.ant.IvyBuildNumber -eclipseTask antlib:org.apache.ivy.ant:cleancache,org.apache.ivy.ant.IvyCleanCache -eclipseTask antlib:org.apache.ivy.ant:buildobr,org.apache.ivy.ant.BuildOBRTask -eclipseTask antlib:org.apache.ivy.ant:convertmanifest,org.apache.ivy.ant.ConvertManifestTask -eclipseTask antlib:org.apache.ivy.ant:fixdeps,org.apache.ivy.ant.FixDepsTask -eclipseTask antlib:org.apache.ivy.ant:dependencytree,org.apache.ivy.ant.IvyDependencyTree -eclipseTask antlib:org.apache.ivy.ant:checkdepsupdate,org.apache.ivy.ant.IvyDependencyUpdateChecker -eclipseType antlib:org.apache.ivy.ant:settings,org.apache.ivy.ant.IvyAntSettings -eclipseType antlib:org.apache.ivy.ant:resources,org.apache.ivy.ant.IvyResources -buildfile /Users/RTracey/Documents/CS/Eclipse/Research/build.xml';
+    
+        cur['sun.java.launcher'] = 'SUN_STANDARD';
+    
+        cur['sun.java.launcher.ivy.instance'] = 'SUN_STANDARD';
+    
+        cur['sun.jnu.encoding'] = 'UTF-8';
+    
+        cur['sun.jnu.encoding.ivy.instance'] = 'UTF-8';
+    
+        cur['sun.management.compiler'] = 'HotSpot 64-Bit Tiered Compilers';
+    
+        cur['sun.management.compiler.ivy.instance'] = 'HotSpot 64-Bit Tiered Compilers';
+    
+        cur['sun.os.patch.level'] = 'unknown';
+    
+        cur['sun.os.patch.level.ivy.instance'] = 'unknown';
+    
+        cur['tests'] = 'test';
+    
+        cur['theme.dir'] = 'WebContent/VAADIN/themes';
+    
+        cur['theme.name'] = 'research';
+    
+        cur['user.country'] = 'US';
+    
+        cur['user.country.format'] = 'CA';
+    
+        cur['user.country.format.ivy.instance'] = 'CA';
+    
+        cur['user.country.ivy.instance'] = 'US';
+    
+        cur['user.dir'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['user.dir.ivy.instance'] = '/Users/RTracey/Documents/CS/Eclipse/Research';
+    
+        cur['user.home'] = '/Users/RTracey';
+    
+        cur['user.home.ivy.instance'] = '/Users/RTracey';
+    
+        cur['user.language'] = 'en';
+    
+        cur['user.language.ivy.instance'] = 'en';
+    
+        cur['user.name'] = 'RTracey';
+    
+        cur['user.name.ivy.instance'] = 'RTracey';
+    
+        cur['user.timezone'] = '';
+    
+        cur['user.timezone.ivy.instance'] = 'America/Halifax';
+    
+        cur['warfilename'] = 'database.war';
+    
+        cur['webroot'] = 'WebContent';
+    
+        cur['workdir'] = 'build/work';
+    </script><script type="text/javascript" language="JavaScript">
+        function displayProperties (name) {
+          var win = window.open('','JUnitSystemProperties','scrollbars=1,resizable=1');
+          var doc = win.document;
+          doc.open();
+          doc.write("<html><head><title>Properties of " + name + "</title>");
+          doc.write("<style type=\"text/css\">");
+          doc.write("body {font:normal 68% verdana,arial,helvetica; color:#000000; }");
+          doc.write("table tr td, table tr th { font-size: 68%; }");
+          doc.write("table.properties { border-collapse:collapse; border-left:solid 1 #cccccc; border-top:solid 1 #cccccc; padding:5px; }");
+          doc.write("table.properties th { text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#eeeeee; }");
+          doc.write("table.properties td { font:normal; text-align:left; border-right:solid 1 #cccccc; border-bottom:solid 1 #cccccc; background-color:#fffffff; }");
+          doc.write("h3 { margin-bottom: 0.5em; font: bold 115% verdana,arial,helvetica }");
+          doc.write("</style>");
+          doc.write("</head><body>");
+          doc.write("<h3>Properties of " + name + "</h3>");
+          doc.write("<div align=\"right\"><a href=\"javascript:window.close();\">Close</a></div>");
+          doc.write("<table class='properties'>");
+          doc.write("<tr><th>Name</th><th>Value</th></tr>");
+          for (prop in TestCases[name]) {
+            doc.write("<tr><th>" + prop + "</th><td>" + TestCases[name][prop] + "</td></tr>");
+          }
+          doc.write("</table>");
+          doc.write("</body></html>");
+          doc.close();
+          win.focus();
+        }
+      
+      </script>
+</head>
+<body>
+<h1>Unit Test Results.</h1>
+<table width="100%">
+<tr>
+<td align="left"></td><td align="right">Designed for use with <a href="http://www.junit.org/">JUnit</a> and <a href="http://ant.apache.org/">Ant</a>.</td>
+</tr>
+</table>
+<hr size="1">
+<h3>Class com.example.research.DataDBAccessControlTest</h3>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th width="80%">Name</th><th>Tests</th><th>Errors</th><th>Failures</th><th>Skipped</th><th nowrap>Time(s)</th><th nowrap>Time Stamp</th><th>Host</th>
+</tr>
+<tr valign="top" class="Pass">
+<td><a title="Display all tests" href="1_DataDBAccessControlTest.html">DataDBAccessControlTest</a></td><td><a title="Display all tests" href="1_DataDBAccessControlTest.html">2</a></td><td>0</td><td>0</td><td>0</td><td>0.015</td><td>2016-03-06T20:04:02</td><td>TBE9A.WPA.Dal.Ca</td>
+</tr>
+</table>
+<h2>Tests</h2>
+<table class="details" border="0" cellpadding="5" cellspacing="2" width="95%">
+<tr valign="top">
+<th>Name</th><th>Status</th><th width="80%">Type</th><th nowrap>Time(s)</th>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="ContainerInitTest"></a>ContainerInitTest</td><td>Success</td><td></td><td>0.001</td>
+</tr>
+<tr valign="top" class="TableRowColor">
+<td><a name="userDataContainerTest"></a>userDataContainerTest</td><td>Success</td><td></td><td>0.010</td>
+</tr>
+</table>
+<div class="Properties">
+<a href="javascript:displayProperties('com.example.research.DataDBAccessControlTest');">
+                    Properties &raquo;
+                </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+package com.example.research;
+
+import static org.junit.Assert.*;
+
+import java.util.List;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+
+import com.example.research.backend.MapControl;
+import com.example.research.backend.db.Data;
+
+public class MapControlTest {
+
+	private MapControl controller;
+	
+	@Test
+	//UT041: Test MapControl Constructor.
+	public void constructorTest() {
+		controller = new MapControl();
+		assertTrue(controller != null);
+	}
+	
+	@Test
+	//UT042: Test setLongitude / getLongitude Methods.
+	public void longitudeTest() {
+		controller = new MapControl();
+		controller.setLongitude(10.0);
+		assertTrue(controller.getLongitude() == 10.0);
+	}
+
+	@Test
+	//UT043: Test setLatitude / getLatitude Methods.
+	public void latitudeTest() {
+		controller = new MapControl();
+		controller.setLatitude(10.0);
+		assertTrue(controller.getLatitude() == 10.0);
+	}
+	
+	@Test
+	//UT044: Test getMapPoints() Method.
+	public void mapPointsTest(){
+		controller = new MapControl();
+		List<Data> points = controller.getMapPoints("mons02");
+		assertTrue(points != null);
+	}
+}

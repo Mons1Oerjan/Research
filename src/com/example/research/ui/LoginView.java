@@ -1,0 +1,105 @@
+package com.example.research.ui;
+
+import com.example.research.backend.LoginValidator;
+import com.example.research.backend.db.User;
+import com.vaadin.data.util.BeanItem;
+import com.vaadin.navigator.View;
+import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
+import com.vaadin.shared.ui.MarginInfo;
+import com.vaadin.ui.*;
+import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.Notification.Type;
+
+/** Application Login Screen. Filters Participant and Researcher logins to
+ *  their associated Views.  */
+public class LoginView extends CustomComponent implements View, Button.ClickListener{
+	
+	private static final long serialVersionUID = -7036998457489125709L;
+	private final TextField user = new TextField("User:");
+	private final PasswordField password = new PasswordField("Password:");
+    private final Button loginButton =  new Button("Login", this);
+    private final Button registerNewUser = new Button("Register", e -> newUser());
+	
+	public LoginView(){
+		buildUI();
+	}
+	
+	/** Initialize UI components and add them to the view layout.  */
+	private void buildUI(){
+		setSizeFull();
+
+        // Create the user input field
+        user.setWidth("300px");
+        user.setRequired(true);
+        user.setInputPrompt("Your username");
+        user.setInvalidAllowed(false);
+
+        // Create the password input field
+        password.setWidth("300px");
+        password.setRequired(true);
+        password.setValue("");
+        password.setNullRepresentation("");
+                
+        // Add both to a panel
+        VerticalLayout fields = new VerticalLayout(user, password, loginButton, registerNewUser);
+        fields.setCaption("Enter your login and password");
+        fields.setSpacing(true);
+        fields.setMargin(new MarginInfo(true, true, false, false));
+        fields.setSizeUndefined();
+        
+        // The view root layout
+        VerticalLayout viewLayout = new VerticalLayout(fields);
+        viewLayout.setSizeFull();
+        viewLayout.setComponentAlignment(fields, Alignment.MIDDLE_CENTER);
+        setCompositionRoot(viewLayout);
+	}
+	
+	@Override
+	/** Set the user name field focused on entry.  */
+	public void enter(ViewChangeEvent event) {
+		user.focus();
+	}
+	
+	/** Login Attempt.  */
+    public void buttonClick(ClickEvent event) {
+        if (!user.isValid() || !password.isValid()) 
+            return;
+       
+        //Send entered fields to validator.
+        LoginValidator validator = new LoginValidator(user.getValue(), password.getValue());
+
+        //Check if entrant is a valid researcher.
+        if (validator.isValidResearcher()) {
+
+            // Store the current user in the service session
+            getSession().setAttribute("user", validator.getUsername());
+
+            //Navigates to the next menu
+            getUI().setContent(new ResearcherDashboardView());
+
+        //Check if entrant is a valid user.    
+        } else if (validator.isValidUser()){
+        	
+        	// Store the current user in the service session
+            getSession().setAttribute("user", validator.getUsername());
+            //Navigates to the participantView
+    		getUI().setContent(new ParticipantView());
+      	
+        //Invalid.    
+        } else {
+        	
+            // Wrong password clear the password field and refocuses it
+            this.password.setValue(null);
+            Notification.show("Incorrect Username/Password", Type.WARNING_MESSAGE);
+            this.password.focus();
+
+        }
+    }
+    /** Display a new user register window.  */
+    public void newUser() {
+    	final BeanItem<User> newUserItem = new BeanItem<User>(new User());
+        RegisterUserView popup = new RegisterUserView(newUserItem);
+        UI.getCurrent().addWindow(popup);
+        
+    }
+}

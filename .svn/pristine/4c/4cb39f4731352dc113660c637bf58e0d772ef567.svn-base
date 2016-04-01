@@ -1,0 +1,348 @@
+package com.example.research;
+
+import com.vaadin.testbench.By;
+import com.vaadin.testbench.ScreenshotOnFailureRule;
+import com.vaadin.testbench.TestBenchTestCase;
+import com.vaadin.testbench.elements.ButtonElement;
+import com.vaadin.testbench.elements.ComboBoxElement;
+import com.vaadin.testbench.elements.LabelElement;
+import com.vaadin.testbench.elements.NotificationElement;
+import com.vaadin.testbench.elements.PasswordFieldElement;
+import com.vaadin.testbench.elements.TextFieldElement;
+
+import org.junit.Before;
+import org.junit.Rule;
+import org.junit.Test;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
+/**
+ * This class contains JUnit tests, which are run using Vaadin TestBench 4.
+ * This class tests the Researcher UI.
+ */
+public class ResearchTestBench extends TestBenchTestCase {
+
+	@Rule
+    public ScreenshotOnFailureRule screenshotOnFailureRule =
+            new ScreenshotOnFailureRule(this, true);
+	
+	/**
+	 * Sets the driver to a new PhantomJSDriver
+	 * @throws Exception
+	 */
+    @Before
+    public void setUp() throws Exception {
+    	setDriver(new PhantomJSDriver()); //PhantomJS
+    	
+    }
+    
+    
+    /**
+     * Opens the URL where the application is deployed.
+     */
+    private void openTestUrl() {
+        getDriver().get("http://localhost:8090/Research");
+    }
+    
+    
+    @Test
+    // Unit test 032: Test login for participant (user)
+    public void testParticipantLogin() throws Exception {
+        
+    	openTestUrl();
+    	
+        // At first there should be no label elements
+        assertFalse($(LabelElement.class).exists());
+        
+        TextFieldElement usernameField = $(TextFieldElement.class).caption("User:").first();
+        // There should now be one TextField
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        PasswordFieldElement passwordField = $(PasswordFieldElement.class).caption("Password:").first();
+        // There should now be 1 PasswordField
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        
+        // Set the username to a user's username
+        usernameField.setValue("mons02");
+        assertEquals("mons02", $(TextFieldElement.class).first().getValue());
+        
+        // Set the password to the user's password
+        passwordField.setValue("password");
+        assertEquals("password", $(PasswordFieldElement.class).first().getValue());
+
+        // Create the button.
+        ButtonElement loginButton = $(ButtonElement.class).caption("Login").first();
+        // There should now be 1 button
+        assertEquals(2, $(ButtonElement.class).all().size());
+        
+        //Click the button and login as a participant
+        loginButton.click();
+        
+        // This should go to the next page, so there should be 4 labels
+        assertEquals(4, $(LabelElement.class).all().size());
+        // The first button element should be the sendData button
+        assertEquals("Send Data", $(ButtonElement.class).first().getCaption());
+        //check if the tracker notification is being called:
+        assertEquals("Tracker is ON", $(NotificationElement.class).first().getCaption());
+
+        // Test Map functionality:
+        // Navigate to mapView and test the map:
+        assertEquals("Map", driver.findElement(By.id("mapNavButton")).getText());
+        driver.findElement(By.id("mapNavButton")).click();
+        //we should now have navigated to the map view:
+        assertEquals("Data Collection", driver.findElement(By.id("dataCollectionNavButton")).getText());
+        assertEquals(true, driver.findElement(By.id("mapView")).isDisplayed());
+        assertEquals(true, driver.findElement(By.id("lmap")).isDisplayed());
+        
+        // navigate back to data collection screen
+        driver.findElement(By.id("dataCollectionNavButton")).click();
+        assertEquals(true, driver.findElement(By.id("mainView")).isDisplayed());
+        // there should be 4 labels
+        assertEquals(4, $(LabelElement.class).all().size());
+        // The first button element should be the sendData button
+        assertEquals("Send Data", $(ButtonElement.class).first().getCaption());
+        // End of map-testing
+        
+        
+        //test logout functionality:
+        ButtonElement logoutButton = $(ButtonElement.class).caption("Logout").first();
+        logoutButton.click();
+        // There should now be 1 textfield, 1 passwordfield and 1 button 
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        assertEquals(2, $(ButtonElement.class).all().size());
+    }
+    
+    @Test
+    // Unit test 033: Test login for researcher
+    public void testResearcherLogin() throws Exception {
+        
+    	openTestUrl();
+    	
+        // At first there should be no labels
+        assertFalse($(LabelElement.class).exists());
+        
+        TextFieldElement usernameField = $(TextFieldElement.class).caption("User:").first();
+        // There should now be one textfield
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        PasswordFieldElement passwordField = $(PasswordFieldElement.class).caption("Password:").first();
+        // There should now be one passwordfield
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        
+        // Set the username value to a researcher's username and test
+        usernameField.setValue("mons01");
+        assertEquals("mons01", $(TextFieldElement.class).first().getValue());
+        
+        // Set the password value to a researcher's password and test
+        passwordField.setValue("password");
+        assertEquals("password", $(PasswordFieldElement.class).first().getValue());
+
+        // Create a button
+        ButtonElement loginButton = $(ButtonElement.class).caption("Login").first();
+        // There should now be 1 button element
+        assertEquals(2, $(ButtonElement.class).all().size());
+        
+        //click the button to login as a researcher
+        loginButton.click();
+        
+        // This should go to the next page, so there should be 2 labels, and the first button should be Logout
+        assertEquals(1, $(LabelElement.class).all().size());
+        assertEquals("Logout", $(ButtonElement.class).first().getCaption());
+       
+        //test logout functionality:
+        ButtonElement logoutButton = $(ButtonElement.class).caption("Logout").first();
+        logoutButton.click();
+        //There should now be 1 textfield, 1 passwordfield and 1 button element
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        assertEquals(2, $(ButtonElement.class).all().size());
+    }
+   
+    @Test
+    // Unit test 034: Test data collection switch for participant (user)
+    public void testParticipantSwitch() throws Exception {
+        
+    	openTestUrl();
+    	
+        // At first there should be no labels
+        assertFalse($(LabelElement.class).exists());
+        
+        TextFieldElement usernameField = $(TextFieldElement.class).caption("User:").first();
+        // There should now be one label
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        PasswordFieldElement passwordField = $(PasswordFieldElement.class).caption("Password:").first();
+        // There should now be two labels
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        
+        usernameField.setValue("mons02");
+        // ... with the specified text
+        assertEquals("mons02", $(TextFieldElement.class).first().getValue());
+        
+       
+        passwordField.setValue("password");
+        assertEquals("password", $(PasswordFieldElement.class).first().getValue());
+
+        // Click the button
+        ButtonElement loginButton = $(ButtonElement.class).caption("Login").first();
+        // There should now be three labels
+        assertEquals(2, $(ButtonElement.class).all().size());
+        
+        loginButton.click();
+        
+        // This should go to the next page, so there should be 4 labels
+        assertEquals(4, $(LabelElement.class).all().size());
+        assertEquals("Send Data", $(ButtonElement.class).first().getCaption());
+        
+        //click the User Acount Info Button
+        driver.findElement(By.className("v-touchkit-navbutton-back")).click();
+        
+        //click the switch
+        WebElement input = driver.findElement(By.id("projectSwitch"));
+        assertTrue(input.isEnabled());
+        
+    }
+    
+    @Test
+    // Unit test 039: Test registration form for participant (user)
+    public void testParticipantRegisterForm() throws Exception{
+    	openTestUrl();
+        // At first there should be no labels
+        assertFalse($(LabelElement.class).exists());
+        ButtonElement register = $(ButtonElement.class).caption("Register").first();
+        register.click();
+        //now the register view should show
+        assertEquals(5, $(TextFieldElement.class).all().size());
+        TextFieldElement usernameField = $(TextFieldElement.class).caption("Username:").first();
+        TextFieldElement realnameField = $(TextFieldElement.class).caption("Given name:").first();
+        PasswordFieldElement passwordField = $(PasswordFieldElement.class).id("passField");
+        PasswordFieldElement passwordField2 = $(PasswordFieldElement.class).caption("Re-enter Password:").first();
+        TextFieldElement phone = $(TextFieldElement.class).caption("Phone number:").first();
+        TextFieldElement email = $(TextFieldElement.class).caption("Email:").first();
+        ComboBoxElement combobox = $(ComboBoxElement.class).first();
+        ButtonElement create_user = $(ButtonElement.class).caption("Create User").first();
+        WebElement user_switch = driver.findElement(By.id("user_switch"));
+        
+        
+        //set values that should fail
+        usernameField.setValue("mons02");
+        realnameField.setValue("newABC");
+        passwordField.setValue("password");
+        passwordField2.setValue("password");
+        phone.setValue("5555555555");
+        email.setValue("email@email.com");
+        combobox.selectByText("Project1");
+        
+        assertEquals("mons02", $(TextFieldElement.class).caption("Username:").first().getValue());
+        assertEquals("newABC", $(TextFieldElement.class).caption("Given name:").first().getValue());
+        assertEquals("password", $(PasswordFieldElement.class).id("passField").getValue());
+        assertEquals("password", $(PasswordFieldElement.class).caption("Re-enter Password:").first().getValue());
+        assertEquals("5555555555", phone.getValue());
+        assertEquals("email@email.com", email.getValue());
+        assertEquals("Project1", $(ComboBoxElement.class).first().getValue());
+        assertEquals(true, driver.findElement(By.id("user_switch")).isDisplayed());
+        
+        create_user.click();
+        
+        assertEquals("Username already exists. Please try again.", $(NotificationElement.class).first().getCaption());
+        $(NotificationElement.class).first().click();
+        
+        register.click();
+        
+        //set values that should fail
+        usernameField = $(TextFieldElement.class).caption("Username:").first();
+        realnameField = $(TextFieldElement.class).caption("Given name:").first();
+        passwordField = $(PasswordFieldElement.class).id("passField");
+        passwordField2 = $(PasswordFieldElement.class).caption("Re-enter Password:").first();
+        phone = $(TextFieldElement.class).caption("Phone number:").first();
+        email = $(TextFieldElement.class).caption("Email:").first();
+        combobox = $(ComboBoxElement.class).first();
+        create_user = $(ButtonElement.class).caption("Create User").first();
+        usernameField.setValue("newABC");
+        realnameField.setValue("newABC");
+        passwordField.setValue("password");
+        passwordField2.setValue("pass");
+        phone.setValue("5555555555");
+        email.setValue("email@email.com");
+        combobox.selectByText("Project1");
+        
+        assertEquals("newABC", $(TextFieldElement.class).caption("Username:").first().getValue());
+        assertEquals("newABC", $(TextFieldElement.class).caption("Given name:").first().getValue());
+        assertEquals("password", $(PasswordFieldElement.class).id("passField").getValue());
+        assertEquals("pass", $(PasswordFieldElement.class).caption("Re-enter Password:").first().getValue());
+        assertEquals("5555555555", phone.getValue());
+        assertEquals("email@email.com", email.getValue());
+        assertEquals("Project1", $(ComboBoxElement.class).first().getValue());
+        assertEquals(true, driver.findElement(By.id("user_switch")).isDisplayed());
+        
+        create_user.click();
+        
+        assertEquals("Passwords must be equal.", $(NotificationElement.class).first().getCaption());
+        $(NotificationElement.class).first().click();
+        register.click();
+        
+        //set values that should succeed
+        usernameField = $(TextFieldElement.class).caption("Username:").first();
+        realnameField = $(TextFieldElement.class).caption("Given name:").first();
+        passwordField = $(PasswordFieldElement.class).id("passField");
+        passwordField2 = $(PasswordFieldElement.class).caption("Re-enter Password:").first();
+        phone = $(TextFieldElement.class).caption("Phone number:").first();
+        email = $(TextFieldElement.class).caption("Email:").first();
+        combobox = $(ComboBoxElement.class).first();
+        create_user = $(ButtonElement.class).caption("Create User").first();
+        usernameField.setValue("newABC");
+        realnameField.setValue("newABC");
+        passwordField.setValue("password");
+        passwordField2.setValue("password");
+        phone.setValue("5555555555");
+        email.setValue("email@email.com");
+        combobox.selectByText("Project1");
+        
+        
+        
+        assertEquals("newABC", $(TextFieldElement.class).caption("Username:").first().getValue());
+        assertEquals("newABC", $(TextFieldElement.class).caption("Given name:").first().getValue());
+        assertEquals("password", $(PasswordFieldElement.class).id("passField").getValue());
+        assertEquals("password", $(PasswordFieldElement.class).caption("Re-enter Password:").first().getValue());
+        assertEquals("5555555555", phone.getValue());
+        assertEquals("email@email.com", email.getValue());
+        assertEquals("Project1", $(ComboBoxElement.class).first().getValue());
+        assertEquals(true, driver.findElement(By.id("user_switch")).isDisplayed());
+        
+        create_user.click();
+        
+        
+        
+        assertEquals("Successsfully created", $(NotificationElement.class).first().getCaption());
+        
+        //now log in
+        TextFieldElement username = $(TextFieldElement.class).caption("User:").first();
+        // There should now be one textfield
+        assertEquals(1, $(TextFieldElement.class).all().size());
+        PasswordFieldElement password = $(PasswordFieldElement.class).caption("Password:").first();
+        // There should now be one passwordfield
+        assertEquals(1, $(PasswordFieldElement.class).all().size());
+        
+        // Set the username value to a researcher's username and test
+        username.setValue("newABC");
+        assertEquals("newABC", $(TextFieldElement.class).caption("User:").first().getValue());
+        
+        // Set the password value to a researcher's password and test
+        password.setValue("password");
+        assertEquals("password", $(PasswordFieldElement.class).caption("Password:").first().getValue());
+
+        // Create a button
+        ButtonElement loginButton = $(ButtonElement.class).caption("Login").first();
+        // There should now be 1 button element
+        assertEquals(2, $(ButtonElement.class).all().size());
+        
+        //click the button to login as a researcher
+        loginButton.click();
+        
+        // This should go to the next page, so there should be 2 labels, and the first button should be Logout
+        assertEquals(4, $(LabelElement.class).all().size());
+        
+    }
+}

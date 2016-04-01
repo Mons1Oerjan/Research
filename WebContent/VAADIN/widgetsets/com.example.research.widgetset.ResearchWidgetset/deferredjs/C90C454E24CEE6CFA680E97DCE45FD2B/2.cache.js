@@ -1,0 +1,1 @@
+$wnd.com_example_research_widgetset_ResearchWidgetset.runAsyncCallback2('Frb(1821,1,jQe);_.Xd=function hSc(){hyc((!ayc&&(ayc=new nyc),ayc),this.a.d)};bze(Jl)(2);\n//# sourceURL=com.example.research.widgetset.ResearchWidgetset-2.js\n')

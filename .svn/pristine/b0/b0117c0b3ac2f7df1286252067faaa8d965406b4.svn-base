@@ -1,0 +1,68 @@
+package com.example.research;
+import com.vaadin.addon.touchkit.server.TouchKitServlet;
+import com.vaadin.addon.touchkit.settings.TouchKitSettings;
+import com.vaadin.annotations.Theme;
+import com.vaadin.annotations.Title;
+import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.annotations.Widgetset;
+import com.vaadin.data.util.BeanItemContainer;
+import com.example.research.backend.db.Data;
+import com.example.research.backend.db.testData.DummyDBValues;
+import com.example.research.ui.LoginView;
+import com.vaadin.server.VaadinRequest;
+import com.vaadin.ui.*;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+
+
+/**
+ * Initialization of the program's UI. Dummy data is called to be created here.
+ * UI opens the initial view, which is the login screen for the program.  
+ */
+@Theme("touchkit")
+@Title("Research")
+@Widgetset("com.example.research.widgetset.ResearchWidgetset")
+public class ResearchUI extends UI {
+
+	private static final long serialVersionUID = -7474281097489877625L;
+	public static final String PERSISTENCE_UNIT = "Research_DB";
+
+    @Override
+    protected void init(VaadinRequest request) {
+    	//initialize dummy data in the database:
+    	if(!DummyDBValues.is_init)
+    		DummyDBValues.createData();
+        //Display Login view.
+        setContent(new LoginView());      
+    }
+    
+    /**
+     * A typed version of UI.getCurrent()
+     * @return the currently active ResearchUI.
+     */
+    public static ResearchUI getApp() {
+        return (ResearchUI) UI.getCurrent();
+    }
+    
+    
+    
+
+    /**  Servlet configuration.
+     *   The servlet is associated with the program's Widget Set, which uses the Vaadin Touchkit Add-on.  
+     */
+    @WebServlet(urlPatterns = "/*")
+    @VaadinServletConfiguration(ui = ResearchUI.class, productionMode = false, widgetset = "com.example.research.widgetset.ResearchWidgetset")
+    public static class MyUIServlet extends TouchKitServlet {
+		private static final long serialVersionUID = -4110262210275934312L;
+		
+		@Override
+		protected void servletInitialized() throws ServletException {
+			super.servletInitialized();
+			String context = getServletConfig().getServletContext().getContextPath();
+			TouchKitSettings s = getTouchKitSettings();
+			s.getWebAppSettings().setWebAppCapable(true);
+			s.getWebAppSettings().setStartupImage(context + "/VAADIN/themes/Login_BG.jpg");
+			s.getApplicationIcons().addApplicationIcon(context + "/VAADIN/themes/icon.png");
+		}
+    }
+}

@@ -1,0 +1,232 @@
+package com.example.research.backend.db.testData;
+
+import java.util.*;
+
+import javax.persistence.*;
+
+import com.example.research.ResearchUI;
+import com.example.research.backend.UserDBAccessControl;
+import com.example.research.backend.db.*;
+import com.vaadin.addon.jpacontainer.JPAContainer;
+import com.vaadin.addon.touchkit.extensions.Geolocator;
+import com.vaadin.addon.touchkit.extensions.PositionCallback;
+import com.vaadin.addon.touchkit.gwt.client.vcom.Position;
+import com.vaadin.ui.Notification;
+import com.vaadin.ui.Notification.Type;
+
+/**
+ * Create and persist test data into the JPA Database for the purpose
+ * of testing the application. Values are added only once at run time.  */
+public class DummyDBValues {
+	
+
+	public static final long startTime = 3000;
+	public static final long endTime = 3600000;
+
+	private static double dalLatitude = 44.637393;
+	private static double dalLongitude = -63.587189;
+	
+	public static boolean is_init = false;
+	
+	//initialize EntityManager
+	public static EntityManager em; 
+	
+	/** 
+	 * Create test data. Data can only be created once per application run.
+	 * Data created: 
+	 * Researchers: 2
+	 * Projects: 3
+	 * Users: 7
+	 * Data Points: 70 (10 per User)  */
+	public static synchronized void createData(){
+
+		if(!is_init){
+			
+			em = Persistence.createEntityManagerFactory(
+	    			ResearchUI.PERSISTENCE_UNIT).createEntityManager();
+			
+			em.getTransaction().begin();
+			
+			//Create 2 researchers.
+			Researcher r1 = new Researcher("rtracey", "password", "555-555-5555", "email@email.com", "Robert Tracey", false);
+			Researcher r2 = new Researcher("mons01", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			
+			//Create 3 projects.
+			Project p1 = new Project("Project1", new Date(System.currentTimeMillis()+startTime), new Date(System.currentTimeMillis()+endTime),
+					false, true, true, false, false, "");
+			Project p2 = new Project("Project2", new Date(System.currentTimeMillis()+startTime), new Date(System.currentTimeMillis()+endTime),
+					true, true, true, true, true, "Some info about this project");
+			Project p3 = new Project("Project3", new Date(System.currentTimeMillis()+startTime), new Date(System.currentTimeMillis()+endTime), 
+					true, false, true, true, false, "");
+			//Project p4 = new Project("Project3", new Date(System.currentTimeMillis()+(twoDays*100)), new Date(System.currentTimeMillis()+(twoDays*102)), 
+					//true, false, true, true, false, "");
+			
+			//Create 7 users.
+			User u1 = new User("mons02", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u2 = new User("mons03", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u3 = new User("mons04", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u4 = new User("mons05", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u5 = new User("mons06", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u6 = new User("mons07", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			User u7 = new User("mons08", "password", "555-555-5555", "email@email.com", "O Mons", false);
+			
+			//Assign users to projects.
+			p1.addUser(u1);
+			p1.addUser(u2);
+			p1.addUser(u3);
+			
+			p2.addUser(u4);
+			p2.addUser(u5);
+			
+			p3.addUser(u6);
+			
+			
+			//Assign projects to researchers.
+			r1.addProject(p1);
+			r1.addProject(p2);
+			r2.addProject(p3);
+			//r2.addProject(p4);
+					
+			//Assign data to users.
+			Position pos = new Position();
+			
+			pos.setAccuracy(20.0);
+			double testIncrement = 0.0001;
+			for(int i=0; i<10; i++){
+				testIncrement += testIncrement;
+				pos.setLatitude(dalLatitude + testIncrement);
+				pos.setLongitude(dalLongitude);
+				u1.addData(new Data(pos));
+				u2.addData(new Data(pos));
+				u3.addData(new Data(pos));
+				u4.addData(new Data(pos));
+				u5.addData(new Data(pos));
+				u6.addData(new Data(pos));
+				u7.addData(new Data(pos));
+			}
+			
+			//persist users
+			em.persist(u1);
+			em.persist(u2);
+			em.persist(u3);
+			em.persist(u4);
+			em.persist(u5);
+			em.persist(u6);
+			em.persist(u7);
+			
+			//persist projects
+			em.persist(p1);
+			em.persist(p2);
+			em.persist(p3);
+			//em.persist(p4);
+			
+			//Add researchers to Container.
+			em.persist(r1);
+			em.persist(r2);
+			
+			//commit transaction:
+			em.getTransaction().commit();
+			
+			is_init = true;
+		}	
+	}
+	
+	/** 
+	 * Persist a new Data entity to the given User.
+	 * @param u User to associate new data entry with.  */
+	public static synchronized void addDummyEntity(User u){
+		em.getTransaction().begin();
+		Data d = new Data(new Position());
+		u.addData(d);
+		em.persist(d);
+    	em.getTransaction().commit();
+	}
+	/**
+	 * Persist a new GeoLocation data entity to the given User.
+	 * @param u user to associate new data entry with
+	 * @param p position values for the user
+	 */
+	public static synchronized void addGeoUserDataEntity(String username){	
+		
+		Geolocator.detect(new PositionCallback() {
+    	    public void onSuccess(Position pos) {
+    	    	Data d = new Data(pos, true);
+    	    	User u = UserDBAccessControl.getUser(username);
+    	    	if (u != null && d != null){
+    	    		em.getTransaction().begin();
+    	    		u.addData(d);
+    	    		em.persist(d);
+    	    		em.getTransaction().commit();
+    	    	}
+    	    	else
+    	    		System.out.println("user or data is null");
+    	    }
+			
+    	    public void onFailure(int errorCode) {
+    	        Notification.show("Geolocation request failed. You must grant access for geolocation requests.",
+                        Type.ERROR_MESSAGE);
+    	    }
+    	});
+		
+	}
+	
+	/**
+	 * Persist a new Project entity with the provided
+	 * test parameters.
+	 * @param r Current Researcher creating the Project.
+	 * @param name Project name.
+	 * @param start Project start time.
+	 * @param end Project end time.
+	 * @param speed Toggle visible the Speed test parameter.
+	 * @param accuracy Toggle visible the Accuracy test parameter.
+	 * @param longitude Toggle visible the Longitude test parameter.
+	 * @param latitude Toggle visible the Latitude test parameter.
+	 * @param heading Toggle visible the Heading test parameter.
+	 * @param projectInfo Project description.  */
+	public static synchronized void addProjectEntity(Researcher r, String name, Date start, Date end,
+			boolean speed, boolean accuracy, boolean longitude, boolean latitude, boolean heading,
+			String projectInfo){
+		
+		em.getTransaction().begin();
+    	Project p = new Project(name, start, end, speed, accuracy, longitude, latitude, heading, projectInfo);
+    	r.addProject(p);
+    	em.persist(p);
+    	em.getTransaction().commit();
+	}
+	
+	/**
+	 * adds user to a project and sets the project to the user
+	 * @param username
+	 * @param password
+	 * @param phone
+	 * @param email
+	 * @param name
+	 * @param project
+	 */
+	public static synchronized void addUserEntity(String username, String password, String phone,
+			String email, String name, Project project ) {
+		em.getTransaction().begin();
+		User u = new User(username, password, phone, email, name, false);
+		u.addData(new Data(new Position()));
+		u.setProject(project);
+		project.addUser(u);
+		em.persist(u);
+		em.getTransaction().commit();
+	}
+	
+	/**
+	 * Add a new Researcher to Persistence.
+	 * @param username
+	 * @param password
+	 * @param phone
+	 * @param email
+	 * @param name
+	 */
+	public static synchronized void addResearcherEntity(String username, String password, String phone,
+			String email, String name) {
+		em.getTransaction().begin();
+		Researcher r = new Researcher(username, password, phone, email, name, false);
+		em.persist(r);
+		em.getTransaction().commit();
+	}
+}

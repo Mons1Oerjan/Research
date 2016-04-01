@@ -1,0 +1,159 @@
+package com.example.research.backend.db;
+
+import javax.persistence.*;
+
+import com.vaadin.addon.touchkit.gwt.client.vcom.Position;
+
+/**
+ * A Data entity in the JPA database. Stores position information of an 
+ * associated User. Data has a M-1 relationship with the User entity.  */
+@Entity
+public class Data {
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private int d_id;
+	
+	@ManyToOne
+	private User user;
+	
+	private double heading; 
+	private double speed;
+	private double longitude;
+	private double latitude;
+	private double accuracy;
+
+	/**
+	 * Constructor that sets the heading, speed, longitude,
+	 * latitude and accuracy of the data equal to 0.
+	 * @param position Position object, a Vaadin Touchkit component.  */
+	public Data(Position position) {
+		
+		this.heading = position.getHeading() == null ? 0 : position.getHeading();
+		this.speed = position.getSpeed() == null ? 0 : position.getSpeed();
+		this.longitude = position.getLongitude();
+		this.latitude = position.getLatitude();
+		this.accuracy = position.getAccuracy();
+		
+	}
+	/**
+	 * Constructor that sets all position attributes to the position that is
+	 * being passed into this constructor. 
+	 * @param position Position object, Vaadin Touchkit component
+	 * @param isGeo boolean only used to distinguish from the other constructor. (value does not matter)
+	 */
+	public Data(Position position, boolean isGeo){
+		
+		if (position.getHeading() != null)
+			this.heading = position.getHeading();
+		else
+			this.heading = 0;
+		
+		if (position.getSpeed() != null)
+			this.speed = position.getSpeed();
+		else
+			this.speed = 0;
+		
+		this.longitude = position.getLongitude();
+		this.latitude = position.getLatitude();
+		this.accuracy = position.getAccuracy();
+	}
+	
+	Data(){}
+
+	/**
+	 * Sets the user associated with the data
+	 * @param user
+	 */
+	public void setUser(User user){
+		this.user = user;
+	}
+	
+	/**
+	 * Sets the heading of this data
+	 * @param heading
+	 */
+	public void setHeading(double heading){
+		this.heading = heading;
+	}
+	
+	/**
+	 * Gets the speed of this data
+	 * @param speed
+	 */
+	public void setSpeed(double speed){
+		this.speed = speed;
+	}
+	
+	/**
+	 * Sets the GeoLocation Position longitude of this data
+	 * @param longitude
+	 */
+	public void setLongitude(double longitude){
+		this.longitude = longitude;
+	}
+	
+	/**
+	 * Sets the GeoLocation Position latitude of this data
+	 * @param latitude
+	 */
+	public void setLatitude(double latitude){
+		this.latitude = latitude;
+	}
+	
+	/**
+	 * Sets the GeoLocation Position accuracy of this data
+	 * @param accuracy
+	 */
+	public void setAccuracy(double accuracy){
+		this.accuracy = accuracy;
+	}
+	
+	/**
+	 * Gets the heading of this data
+	 * @return heading
+	 */
+	public double getHeading(){
+		return heading;
+	}
+	
+	/**
+	 * Gets the speed of this data
+	 * @return speed
+	 */
+	public double getSpeed(){
+		return speed;
+	}
+	
+	/**
+	 * Gets the GeoLocation Position longitude of this data
+	 * @return longitude
+	 */
+	public double getLongitude(){
+		return longitude;
+	}
+	
+	/**
+	 * Gets the GeoLocation Position latitude of this data
+	 * @return latitude
+	 */
+	public double getLatitude(){
+		return latitude;
+	}
+	
+	/**
+	 * Gets the GeoLocation Position accuracy of this data
+	 * @return accuracy
+	 */
+	public double getAccuracy(){
+		return accuracy;
+	}
+	
+	/**
+	 * Gets the user associated with this data
+	 * @return user
+	 */
+	public User getUser(){
+		return user;
+	}
+}
